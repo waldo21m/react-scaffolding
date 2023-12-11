@@ -117,6 +117,7 @@
 		"func-style": ["warn", "declaration", { "allowArrowFunctions": true }],
 		"getter-return": ["error", { "allowImplicit": true }],
 		"grouped-accessor-pairs": "warn",
+    "import/export": "off",
 		"import/no-extraneous-dependencies": [
 			"off",
 			{
@@ -212,6 +213,7 @@
 		"redos/no-vulnerable": ["error"],
 		"require-await": "error",
 		"testing-library/no-debugging-utils": "warn",
+    "testing-library/no-manual-cleanup": "off",
 		"testing-library/no-render-in-setup": "off",
 		"unicorn/custom-error-definition": "off",
 		"unicorn/filename-case": "off",

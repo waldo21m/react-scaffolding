@@ -5,11 +5,27 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "type": "chrome",
+			"name": "Debug in Edge",
+			"type": "msedge",
+			"request": "launch",
+			"url": "http://localhost:3000",
+			"webRoot": "${workspaceFolder}"
+		},
+		{
+			"name": "Debug in Chrome",
+			"type": "chrome",
+			"request": "launch",
+			"url": "http://localhost:3000",
+			"webRoot": "${workspaceFolder}"
+		},
+    {
+      "name": "Test",
+      "type": "node",
       "request": "launch",
-      "name": "Run Chrome",
-      "url": "http://localhost:3000",
-      "webRoot": "${workspaceFolder}"
+      "skipFiles": [
+        "<node_internals>/**"
+      ],
+      "program": "${workspaceFolder}/src/index.tsx"
     }
   ]
 }

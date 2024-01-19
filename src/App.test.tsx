@@ -3,11 +3,13 @@ import App from './App';
 
 describe('Simple working test', () => {
 	it('The title Vite + React is visible', () => {
+		expect.hasAssertions();
 		render(<App />);
 		expect(screen.getByText(/vite \+ react/i)).toBeInTheDocument();
 	});
 
 	it('Should increment count on click', () => {
+		expect.hasAssertions();
 		render(<App />);
 		const button = screen.getByText(/count is/i);
 		expect(button).toBeInTheDocument();

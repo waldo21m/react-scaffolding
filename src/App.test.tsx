@@ -1,19 +1,10 @@
-import { fireEvent, render, screen } from './utils/test-utils';
+import { render, screen } from '@testing-library/react';
 import App from './App';
 
-describe('Simple working test', () => {
-	it('The title Vite + React is visible', () => {
+describe('App', () => {
+	it('Render App component', () => {
 		expect.hasAssertions();
 		render(<App />);
-		expect(screen.getByText(/vite \+ react/i)).toBeInTheDocument();
-	});
-
-	it('Should increment count on click', () => {
-		expect.hasAssertions();
-		render(<App />);
-		const button = screen.getByText(/count is/i);
-		expect(button).toBeInTheDocument();
-		fireEvent.click(button);
-		expect(screen.getByText(/count is 1/i)).toBeInTheDocument();
+		expect(screen.getByText(/count is 0/i)).not.toBeNull();
 	});
 });

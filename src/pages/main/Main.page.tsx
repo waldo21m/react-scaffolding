@@ -1,6 +1,7 @@
 import reactLogo from '../../assets/react.svg';
 import { incrementByAmount, useMainSelector } from './slice/mainSlice';
 import { useDispatch } from 'react-redux';
+import Button from '@mui/material/Button';
 import viteLogo from '/vite.svg';
 import './Main.css';
 
@@ -20,9 +21,12 @@ function Main() {
 			</div>
 			<h1>Vite + React</h1>
 			<div className='card'>
-				<button onClick={() => dispatch(incrementByAmount(1))}>
+				<Button
+					variant='contained'
+					onClick={() => dispatch(incrementByAmount(1))}
+				>
 					count is {count}
-				</button>
+				</Button>
 				<p>
 					Edit <code>src/Main.page.tsx</code> and save to test HMR
 				</p>

@@ -13,7 +13,7 @@ export default defineConfig({
 		setupFiles: './src/test/setup.ts',
 		coverage: {
 			all: true,
-			provider: 'v8',
+			provider: 'istanbul',
 			reporter: ['text', 'text-summary', 'lcov', 'cobertura', 'json'],
 			exclude: ['**/{index,main,vite-env.d}.{ts,cts,mts,tsx}'],
 		},

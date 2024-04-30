@@ -1,12 +1,12 @@
 import reactLogo from '../../assets/react.svg';
-import { incrementByAmount, useMainSelector } from './slice/mainSlice';
-import { useDispatch } from 'react-redux';
 import Button from '@mui/material/Button';
-import viteLogo from '/vite.svg';
+import { incrementByAmount, useMainSelector } from './slice/mainSlice';
 import './Main.css';
+import { useAppDispatch } from '../../hooks/reduxHooks';
+import viteLogo from '/vite.svg';
 
 function Main() {
-	const dispatch = useDispatch();
+	const dispatch = useAppDispatch();
 	const { count } = useMainSelector();
 
 	return (
@@ -23,6 +23,7 @@ function Main() {
 			<div className='card'>
 				<Button
 					variant='contained'
+					color='secondary'
 					onClick={() => dispatch(incrementByAmount(1))}
 				>
 					count is {count}

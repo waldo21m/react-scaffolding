@@ -1,5 +1,4 @@
 import { afterEach } from 'vitest';
-import { type UnknownAction } from 'redux';
 import { Provider } from 'react-redux';
 import { type ReactElement } from 'react';
 import {
@@ -8,16 +7,20 @@ import {
 	type RenderResult,
 	cleanup,
 } from '@testing-library/react';
-import { configureStore, type EnhancedStore } from '@reduxjs/toolkit';
-import { appReducer } from '../App.store';
+import {
+	type EnhancedStore,
+	configureStore,
+	type UnknownAction,
+} from '@reduxjs/toolkit';
+import { appReducer, type AppState } from '../App.store';
 
 afterEach(() => {
 	cleanup();
 });
 
 interface CustomRenderOptions extends RenderOptions {
-	preloadedState?: any;
-	store?: EnhancedStore<any, UnknownAction, any>;
+	preloadedState?: AppState;
+	store?: EnhancedStore<AppState, UnknownAction>;
 }
 
 function customRender(

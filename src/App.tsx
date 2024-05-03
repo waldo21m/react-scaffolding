@@ -1,7 +1,7 @@
 import { RouterProvider } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { useRef } from 'react';
-import { ThemeProvider } from '@mui/material/styles';
+import { StyledEngineProvider, ThemeProvider } from '@mui/material/styles';
 import theme from './theme';
 import { makeStore, type AppStore } from './App.store';
 import { router } from './App.routes';
@@ -20,7 +20,9 @@ const App: React.FC = () => {
 	return (
 		<Provider store={storeRef.current}>
 			<ThemeProvider theme={theme}>
-				<RouterProvider router={router} />
+				<StyledEngineProvider injectFirst>
+					<RouterProvider router={router} />
+				</StyledEngineProvider>
 			</ThemeProvider>
 		</Provider>
 	);
